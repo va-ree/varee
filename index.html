@@ -1,395 +1,408 @@
 <!DOCTYPE html>
-<html lang="th" class="scroll-smooth">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satiraphan Champati | Varee Digital Logistics Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome สำหรับ Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- ฝังลิงก์ฟอนต์เก๋ยุคใหม่ Kanit (หัวข้อ) & Prompt (เนื้อหา) จาก Google Fonts -->
+    <title>Portfolio & Research - COCO ME Cafe</title>
+    <!-- นำเข้าฟอนต์ Anuphan จาก Google Fonts แบบเว็บต้นฉบับ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700;900&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome สำหรับไอคอนสวยๆ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        .glow-purple:hover { box-shadow: 0 0 30px rgba(108, 92, 231, 0.35); }
-        .glow-cyan:hover { box-shadow: 0 0 30px rgba(0, 206, 201, 0.35); }
-        /* กำหนดให้หัวข้อภาษาไทยปนอังกฤษทั้งหมดใช้ฟอนต์ Kanit สุดเฉียบ */
-        h1, h2, h3, h4, .font-title { font-family: 'Kanit', sans-serif !important; }
+        :root {
+            --primary-color: #E25822; /* สีส้มหลัก */
+            --secondary-color: #0F2C59; /* สีน้ำเงินเข้มแบบสถาบัน */
+            --dark-color: #1A1A1A;
+            --light-bg: #F8F9FA;
+            --border-color: #E9ECEF;
+            --text-muted: #6C757D;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Anuphan', sans-serif;
+            background-color: #ffffff;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Top Bar & Header */
+        header {
+            background-color: #ffffff;
+            border-bottom: 3px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Banner Section */
+        .hero-section {
+            background: linear-gradient(135deg, #0F2C59 0%, #1d4480 100%);
+            color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(226, 88, 34, 0.4);
+        }
+
+        .btn-main:hover {
+            background-color: #c84616;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Container */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        /* Portfolio Grid Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: #E8F0FE;
+            color: var(--secondary-color);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .card-content h3 {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .card-content p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            height: 70px;
+            overflow: hidden;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: gap 0.2s;
+        }
+
+        .btn-secondary:hover {
+            gap: 12px;
+        }
+
+        /* Info Section (Sidebar + Content style) */
+        .info-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .info-layout {
+                grid-template-columns: 1fr;
+            }
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        .info-box {
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .info-box h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .info-box ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .info-box li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1A1A1A;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
     </style>
 </head>
-<!-- กำหนดให้เนื้อหาหลักทั้งเว็บใช้ฟอนต์ Prompt ที่มีความมินิมอลพรีเมียม -->
-<body class="bg-[#0A0A0E] text-gray-100 font-['Prompt'] antialiased selection:bg-[#6C5CE7] selection:text-white">
+<body>
 
-    <!-- 1. GLASSMORPHISM NAVBAR -->
-    <header class="sticky top-0 z-50 bg-[#0A0A0E]/70 backdrop-blur-xl border-b border-gray-800/40">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-black tracking-widest bg-gradient-to-r from-[#6C5CE7] via-[#8A92A6] to-[#00CEC9] bg-clip-text text-transparent">
-                VAREE<span class="text-xs font-light text-[#00CEC9] tracking-normal">.DIGITAL</span>
-            </a>
-            <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-wider font-semibold text-[#8A92A6]">
-                <a href="#hero" class="hover:text-white transition-colors">Home</a>
-                <a href="#stats" class="hover:text-white transition-colors">Overview</a>
-                <a href="#bento" class="hover:text-white transition-colors">Skills</a>
-                <a href="#works" class="hover:text-white transition-colors">Research & Works</a>
-                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-                <a href="#timeline" class="hover:text-white transition-colors">Timeline</a>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <div class="logo-circle">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>RESEARCH PORTFOLIO</h1>
+                    <p>Logistics & Digital Supply Chain Style</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
+                    <li><a href="#research"><i class="fa-solid fa-book"></i> งานวิจัย</a></li>
+                    <li><a href="#about"><i class="fa-solid fa-circle-info"></i> เกี่ยวกับ</a></li>
+                </ul>
             </nav>
-            <a href="#contact" class="bg-gradient-to-r from-[#6C5CE7] to-[#00CEC9] text-white px-5 py-2.5 rounded-full text-xs font-bold shadow-lg shadow-[#6C5CE7]/10 hover:scale-105 transition duration-300">
-                Contact Me <i class="fa-solid fa-paper-plane ml-1"></i>
-            </a>
         </div>
     </header>
 
-    <!-- 2. HERO SECTION -->
-    <section id="hero" class="relative overflow-hidden min-h-screen flex items-center pt-16 pb-20">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#6C5CE7]/10 rounded-full blur-[130px] pointer-events-none"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00CEC9]/10 rounded-full blur-[130px] pointer-events-none"></div>
-
-        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-800 bg-gray-900/40 text-xs font-semibold text-[#00CEC9] mb-6 backdrop-blur-sm">
-                <span class="w-2 h-2 rounded-full bg-[#00CEC9] animate-pulse"></span> โลจิสติกส์ & ดิจิทัลซัพพลายเชน | มหาวิทยาลัยนเรศวร
-            </span>
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-[1.2]">
-                สถิรพันธุ์ ชำปฏิ <br class="hidden md:block">
-                <span class="bg-gradient-to-r from-[#6C5CE7] via-[#a29bfe] to-[#00CEC9] bg-clip-text text-transparent">"ฟลุ๊ค VAREE"</span>
-            </h1>
-            <p class="text-[#8A92A6] text-base md:text-lg max-w-2xl mx-auto mb-10 font-medium italic leading-relaxed">
-                "Connecting logistics with digital solutions, navigating the future of supply chain."<br>
-                <span class="text-xs text-gray-500 not-italic font-light">(เชื่อมโยงโลจิสติกส์ด้วยโซลูชันดิจิทัล เพื่อนำทางสู่อนาคตแห่งซัพพลายเชน)</span>
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#works" class="bg-white text-black px-8 py-3.5 rounded-xl font-bold hover:bg-[#6C5CE7] hover:text-white transition duration-300 shadow-xl">
-                    สำรวจงานวิจัยและผลงาน
-                </a>
-                <!-- ปุ่มเปิดไฟล์ PDF วิจัยแบบทันทีทางหน้าแรก -->
-                <a href="research-coco-me-cafe.pdf" target="_blank" class="bg-gray-900/80 border border-gray-800 text-white px-8 py-3.5 rounded-xl font-bold hover:border-[#00CEC9] transition duration-300">
-                    <i class="fa-regular fa-file-pdf mr-2"></i> Open Research PDF
-                </a>
-            </div>
+    <!-- Hero Banner -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <h2>การพัฒนาระบบธุรกิจชุมชนและดิจิทัลซัพพลายเชน</h2>
+            <p>ยินดีต้อนรับสู่หน้ารวบรวมข้อมูลงานวิจัยและพอร์ตโฟลิโอ เว็บไซต์นี้จัดทำขึ้นในรูปแบบสถาบันการศึกษาและเทคโนโลยีดิจิทัลที่ทันสมัย ค้นหาง่าย สบายตา</p>
+            <!-- ปุ่มเปิดไฟล์วิจัยหลักหน้าเว็บ -->
+            <a href="research-coco-me-cafe.pdf" target="_blank" class="btn-main">
+                <i class="fa-solid fa-file-pdf"></i> Open Research PDF (เล่มเต็ม)
+            </a>
         </div>
     </section>
 
-    <!-- 3. STATS COUNTER -->
-    <section id="stats" class="max-w-7xl mx-auto px-6 py-12 border-y border-gray-900 bg-gray-900/10 backdrop-blur-sm">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <!-- Main Content -->
+    <main class="main-container">
+        
+        <h2 class="section-title" id="research">ผลงานวิจัยและโครงการวิเคราะห์</h2>
+
+        <div class="portfolio-grid">
+            
+            <!-- การ์ดที่ 1: งานวิจัยร้านกาแฟ COCO ME -->
+            <div class="portfolio-card">
+                <!-- ใส่รูปภาพจำลองบรรยากาศร้านกาแฟและข้อมูล -->
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="COCO ME Cafe" class="card-image">
+                <div class="card-content">
+                    <span class="card-tag">Research Project</span>
+                    <h3>กรณีศึกษาร้าน COCO ME Cafe</h3>
+                    <p>การวิเคราะห์โครงสร้างธุรกิจ การจัดการห่วงโซ่อุปทาน และแนวทางการประยุกต์ใช้เทคโนโลยีดิจิทัลเพื่อยกระดับขีดความสามารถการแข่งขันของร้านคาเฟ่ในชุมชน</p>
+                    <a href="research-coco-me-cafe.pdf" target="_blank" class="btn-secondary">
+                        เปิดอ่านเล่มวิจัยเต็ม PDF <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- การ์ดที่ 2: ระบบการจัดการคลังสินค้า (ข้อมูลจำลอง รอคุณมาเปลี่ยนรูปและข้อความ) -->
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Logistics Management" class="card-image">
+                <div class="card-content">
+                    <span class="card-tag">Logistics & Supply Chain</span>
+                    <h3>ระบบการจัดการโลจิสติกส์ร้านค้า</h3>
+                    <p>บทความวิเคราะห์ตำแหน่งที่ตั้งและการกระจายสินค้าเกษตรแปรรูปในพื้นที่ภาคเหนือตอนล่าง เพื่อลดต้นทุนแฝงและเพิ่มประสิทธิภาพการส่งมอบสินค้า</p>
+                    <a href="#" class="btn-secondary">
+                        อ่านรายละเอียดเพิ่มเติม <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ส่วนข้อมูลเพิ่มเติมด้านล่าง -->
+        <div class="info-layout" id="about">
             <div>
-                <p class="text-4xl md:text-5xl font-black text-[#6C5CE7] mb-1">3 ปี</p>
-                <p class="text-xs uppercase tracking-widest text-[#8A92A6] font-semibold">สั่งสมประสบการณ์ Experience</p>
+                <h2 class="section-title">บทสรุปผู้บริหาร / ข้อมูลเบื้องต้น</h2>
+                <p style="margin-bottom: 15px;">เนื้อหาในส่วนนี้ใช้เพื่อจัดแสดงโครงสร้างของเว็บไซต์สไตล์สถาบัน/คณะโลจิสติกส์ (LDSC) คุณสามารถเข้ามาแก้ไขข้อความ คำโปรย หรือนำเนื้อหาจากบทคัดย่อในงานวิจัยของคุณมาวางใส่ตรงนี้ในภายหลังได้ผ่านโปรแกรมแก้ไขโค้ด</p>
+                <p>ระบบการแสดงผลรองรับหน้าจอทุกรูปแบบ (Responsive Design) ทั้งบนคอมพิวเตอร์ แท็บเล็ต และโทรศัพท์มือถืออย่างสมบูรณ์แบบ</p>
             </div>
-            <div>
-                <p class="text-4xl md:text-5xl font-black text-[#00CEC9] mb-1">1</p>
-                <p class="text-xs uppercase tracking-widest text-[#8A92A6] font-semibold">วิจัยเว็บแอปพลิเคชัน Project</p>
-            </div>
-            <div>
-                <p class="text-4xl md:text-5xl font-black text-white mb-1">10 ใบ</p>
-                <p class="text-xs uppercase tracking-widest text-[#8A92A6] font-semibold">เกียรตบัตร Certificates</p>
-            </div>
-            <div>
-                <p class="text-4xl md:text-5xl font-black text-gray-500 mb-1">NU</p>
-                <p class="text-xs uppercase tracking-widest text-[#8A92A6] font-semibold">นิสิตดิจิทัลซัพพลายเชน</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. BENTO GRID LAYOUT (คลังทักษะรอบด้าน) -->
-    <section id="bento" class="max-w-7xl mx-auto px-6 py-24">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-extrabold mb-3 tracking-tight">Core Competencies & Skills</h2>
-            <p class="text-[#8A92A6] text-sm">ทักษะความสามารถด้านเทคโนโลยีดิจิทัลและการจัดการเชิงยุทธศาสตร์</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- บล็อก 1: การเข้าใจคน -->
-            <div class="bg-[#111116] border border-gray-800/60 rounded-3xl p-8 hover:border-[#6C5CE7]/40 transition duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-11 h-11 rounded-2xl bg-[#6C5CE7]/10 flex items-center justify-center text-[#6C5CE7] mb-6 text-lg">
-                        <i class="fa-solid fa-users-viewfinder"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Empathy & การเข้าใจมนุษย์</h3>
-                    <p class="text-[#8A92A6] text-sm leading-relaxed">
-                        มีความเข้าอกเข้าใจคนรอบข้างและผู้ใช้งานระบบได้เป็นอย่างดี ช่วยให้สามารถสื่อสาร ประสานงาน และวิเคราะห์พฤติกรรมเพื่อออกแบบระบบงานที่ตอบโจทย์ผู้ใช้จริง
-                    </p>
-                </div>
-                <span class="text-xs text-purple-400/80 font-mono mt-6">Human Psychology & Coordination</span>
-            </div>
-
-            <!-- บล็อก 2: ตัดต่อวีดีโอ -->
-            <div class="bg-[#111116] border border-gray-800/60 rounded-3xl p-8 hover:border-[#00CEC9]/40 transition duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-11 h-11 rounded-2xl bg-[#00CEC9]/10 flex items-center justify-center text-[#00CEC9] mb-6 text-lg">
-                        <i class="fa-solid fa-video"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Video Production & ตัดต่อ</h3>
-                    <p class="text-[#8A92A6] text-sm leading-relaxed">
-                        มีความคิดสร้างสรรค์ในด้านมัลติมีเดีย สามารถตัดต่อไฟล์วิดีโอเพื่อการนำเสนอโครงงาน ประชาสัมพันธ์ยุทธศาสตร์ และการสื่อสารการตลาดในยุคดิจิทัลได้อย่างน่าสนใจ
-                    </p>
-                </div>
-                <span class="text-xs text-cyan-400/80 font-mono mt-6">Creative Editing / Media Specialist</span>
-            </div>
-
-            <!-- บล็อก 3: ช่วยคิดไอเดีย วางกลยุทธ์ -->
-            <div class="bg-[#111116] border border-gray-800/60 rounded-3xl p-8 hover:border-gray-700 transition duration-300 flex flex-col justify-between">
-                <div>
-                    <div class="w-11 h-11 rounded-2xl bg-gray-800 flex items-center justify-center text-gray-300 mb-6 text-lg">
-                        <i class="fa-regular fa-lightbulb"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Strategic Thinking & ระดมไอเดีย</h3>
-                    <p class="text-[#8A92A6] text-sm leading-relaxed">
-                        เป็นนักคิดและที่ปรึกษา (Consultant) พร้อมช่วยเหลือในการระดมสมอง วางแผนยุทธศาสตร์ นำเสนอไอเดียและโซลูชันนวัตกรรมใหม่ ๆ เพื่อการพัฒนาขับเคลื่อนองค์กร
-                    </p>
-                </div>
-                <span class="text-xs text-gray-400 font-mono mt-6">Consulting & Brainstorming</span>
-            </div>
-
-            <!-- บล็อก 4: แผงใหญ่ Microsoft Office & Digital Tool -->
-            <div class="md:col-span-3 bg-[#111116] border border-gray-800/60 rounded-3xl p-8 hover:border-[#6C5CE7]/40 transition duration-300 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                <div class="max-w-xl">
-                    <div class="w-11 h-11 rounded-2xl bg-white/5 flex items-center justify-center text-white mb-6 text-lg">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Microsoft Office Advanced & Digital Technology</h3>
-                    <p class="text-[#8A92A6] text-sm leading-relaxed">
-                        ใช้งานซอฟต์แวร์สำนักงานเบื้องต้นและขั้นสูง (Word, Excel, PowerPoint) ได้อย่างเชี่ยวชาญ คล่องแคล่ว แม่นยำ พร้อมนำข้อมูลมาประมวลผลควบคู่กับการจัดการดิจิทัลซัพพลายเชน
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="text-xs bg-gray-900 border border-gray-800 px-3 py-1.5 rounded-lg text-gray-400">MS Office Fluent</span>
-                    <span class="text-xs bg-gray-900 border border-gray-800 px-3 py-1.5 rounded-lg text-gray-400">Data Analytics</span>
-                    <span class="text-xs bg-gray-900 border border-gray-800 px-3 py-1.5 rounded-lg text-gray-400">Digital Supply Chain Tools</span>
-                </div>
+            
+            <div class="info-box">
+                <h3><i class="fa-solid fa-tags" style="color: var(--primary-color);"></i> หมวดหมู่งานวิจัย</h3>
+                <ul>
+                    <li>การจัดการห่วงโซ่อุปทาน (Supply Chain)</li>
+                    <li>พาณิชย์อิเล็กทรอนิกส์ชุมชน (E-Commerce)</li>
+                    <li>การวิเคราะห์พฤติกรรมผู้บริโภค</li>
+                    <li>การลดต้นทุนกระบวนการขนส่ง</li>
+                </ul>
             </div>
         </div>
-    </section>
 
-    <!-- 5. PORTFOLIO TABS SECTION (คลังผลงาน) -->
-    <section id="works" class="bg-[#07070A] py-24 border-t border-gray-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="md:flex md:justify-between md:items-end mb-16">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-3">คลังผลงาน Research & Projects</h2>
-                    <p class="text-[#8A92A6] text-sm">การศึกษาวิจัยเชิงลึกและการนำระบบเทคโนโลยีไปปรับปรุงแพลตฟอร์มธุรกิจ</p>
-                </div>
-                <!-- แผงปุ่มสลับหมวดหมู่ -->
-                <div class="flex bg-gray-900/50 p-1 rounded-xl border border-gray-800 mt-6 md:mt-0">
-                    <button onclick="filterSelection('all')" id="tab-all" class="tab-btn active px-4 py-1.5 rounded-lg text-xs font-bold transition bg-[#6C5CE7] text-white">ทั้งหมด</button>
-                    <button onclick="filterSelection('research')" id="tab-research" class="tab-btn px-4 py-1.5 rounded-lg text-xs font-bold transition text-[#8A92A6] hover:text-white">งานวิจัย</button>
-                    <button onclick="filterSelection('other-work')" id="tab-other-work" class="tab-btn px-4 py-1.5 rounded-lg text-xs font-bold transition text-[#8A92A6] hover:text-white">ผลงานอื่น ๆ</button>
-                </div>
-            </div>
+    </main>
 
-            <!-- กล่องรายการผลงาน -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- โครงการวิจัยที่ 1: ร้าน Coco Me Cafe -->
-                <div class="portfolio-item research bg-[#111116] border border-gray-800/60 rounded-2xl overflow-hidden group hover:border-[#6C5CE7]/60 transition-all duration-300 glow-purple">
-                    <div class="h-48 bg-gradient-to-br from-purple-950/40 to-slate-900 flex items-center justify-center border-b border-gray-800 group-hover:scale-105 transition duration-500 text-gray-600">
-                        <i class="fa-solid fa-mug-saucer text-4xl text-[#6C5CE7]/60"></i>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-[#6C5CE7] tracking-widest uppercase">Research & Web Development</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3 text-white">วิจัยการพัฒนาเว็บไซต์ร้าน โคโค่ มี คาเฟ่ (Coco Me Cafe)</h3>
-                        <p class="text-[#8A92A6] text-xs leading-relaxed mb-6">
-                            โครงงานวิจัยมุ่งเน้นการศึกษา ออกแบบ และพัฒนาเว็บแอปพลิเคชันตรงตัวสำหรับร้านคาเฟ่ เพื่ออำนวยความสะดวกในการเข้าถึงข้อมูล เพิ่มประสิทธิภาพด้านหน้าร้านออนไลน์ (E-Commerce) และเชื่อมโยงกับการจัดการหลังบ้านเชิงซัพพลายเชนวัตถุดิบผ่านเทคโนโลยีดิจิทัลอย่างเป็นระบบ
-                        </p>
-                        <!-- ผูกลิงก์ไฟล์ PDF จริงที่ปุ่มนี้ -->
-                        <a href="research-coco-me-cafe.pdf" target="_blank" class="text-xs font-bold text-[#6C5CE7] hover:underline inline-flex items-center gap-1 transition">
-                            เปิดอ่านเล่มวิจัยเต็ม PDF <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- พื้นที่สำรองรอใส่ผลงานถัดไป -->
-                <div class="portfolio-item other-work bg-[#111116] border border-gray-800/40 rounded-2xl overflow-hidden text-center p-8 flex flex-col justify-center items-center opacity-50 border-dashed">
-                    <div class="w-12 h-12 rounded-full border border-gray-800 flex items-center justify-center text-gray-500 mb-4">
-                        <i class="fa-solid fa-folder-open"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-gray-400 mb-1">อยู่ระหว่างจัดเตรียมโปรเจกต์ถัดไป</h3>
-                    <p class="text-xs text-gray-600">Coming Soon</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. EXPERIENCE SECTIONS (ประวัติการทำงาน) -->
-    <section id="experience" class="max-w-4xl mx-auto px-6 py-24">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-extrabold mb-3">ประวัติการทำงาน & Internship</h2>
-            <p class="text-[#8A92A6] text-sm">การนำความรู้ในห้องเรียนไปประยุกต์และปฏิบัติจริงร่วมกับองค์กร</p>
-        </div>
-
-        <div class="space-y-6">
-            <!-- กองยุทธศาสตร์ เทศบาลนครนครสวรรค์ -->
-            <div class="bg-[#111116] border border-gray-800/80 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 group hover:border-[#00CEC9]/40 transition">
-                <div>
-                    <span class="text-xs font-bold text-[#00CEC9] uppercase tracking-wider">นิสิตฝึกงานกองแผนและนวัตกรรม</span>
-                    <h3 class="text-xl font-bold mt-1 text-white group-hover:text-[#00CEC9] transition">กองยุทธศาสตร์และงบประมาณ</h3>
-                    <p class="text-sm text-gray-400 mt-1">เทศบาลนครนครสวรรค์</p>
-                    <p class="text-xs text-gray-500 mt-2 font-light">เรียนรู้การวางแผนกลยุทธ์เชิงยุทธศาสตร์จังหวัด ประสานงานข้อมูลเพื่อการบริหาร และการนำเครื่องมือดิจิทัลไปใช้หนุนระบบงานภาครัฐ</p>
-                </div>
-                <div class="md:text-right shrink-0">
-                    <span class="text-xs bg-gray-900 border border-gray-800 px-3 py-1.5 rounded-lg text-gray-400 block font-mono text-center">ปัจจุบัน (Internship)</span>
-                </div>
-            </div>
-
-            <!-- กล่องสำรองสำหรับเขียนเพิ่มในอนาคต -->
-            <div class="border border-gray-800/40 border-dashed rounded-2xl p-6 text-center text-gray-600 text-sm">
-                <i class="fa-solid fa-circle-plus mr-1"></i> พื้นที่จัดเตรียมไว้สำหรับบันทึกประสบการณ์การทำงานถัดไปของคุณฟลุ๊ค
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. TIMELINE SECTION (เส้นทางชีวิต) -->
-    <section id="timeline" class="max-w-4xl mx-auto px-6 py-24 border-t border-gray-900">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-extrabold mb-3">เส้นทางการศึกษา Education Timeline</h2>
-            <p class="text-[#8A92A6] text-sm">ประวัติการศึกษาและการเติบโตในแต่ละช่วงเวลาสำคัญ</p>
-        </div>
-
-        <div class="relative border-l border-gray-800 ml-4 md:ml-32">
-            <!-- มหาวิทยาลัย -->
-            <div class="mb-12 relative pl-8 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#6C5CE7] border-4 border-[#0A0A0E] group-hover:scale-125 transition"></div>
-                <div class="absolute right-full mr-8 top-0 hidden md:block text-right w-24">
-                    <span class="text-sm font-bold text-[#6C5CE7]">อุดมศึกษา</span>
-                </div>
-                <h3 class="text-lg font-bold text-white group-hover:text-[#6C5CE7] transition">มหาวิทยาลัยนเรศวร (Naresuan University)</h3>
-                <p class="text-xs font-medium text-[#8A92A6] mb-2">นิสิตคณะโลจิสติกส์และดิจิทัลซัพพลายเชน</p>
-                <p class="text-sm text-gray-400 font-light">ศึกษาเจาะลึกด้านวิศวกรรมการจัดการโซ่อุปทาน เทคโนโลยีดิจิทัลซัพพลายเชน การบริหารโลจิสติกส์ และระบบการประมวลผลข้อมูลทางธุรกิจ</p>
-            </div>
-
-            <!-- ปวส. -->
-            <div class="mb-12 relative pl-8 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-700 border-4 border-[#0A0A0E] group-hover:scale-125 transition"></div>
-                <div class="absolute right-full mr-8 top-0 hidden md:block text-right w-24">
-                    <span class="text-sm font-bold text-gray-500">ระดับ ปวส.</span>
-                </div>
-                <h3 class="text-lg font-bold text-gray-300">ระดับประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</h3>
-                <p class="text-sm text-gray-500 font-light">[ คุณฟลุ๊คสามารถเข้าไปคลิกแก้ไข เพิ่มเติมชื่อสถานศึกษาและสาขาวิชาตรงบรรทัดนี้ได้เลยครับ ]</p>
-            </div>
-
-            <!-- ม.ปลาย -->
-            <div class="mb-12 relative pl-8 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-700 border-4 border-[#0A0A0E] group-hover:scale-125 transition"></div>
-                <div class="absolute right-full mr-8 top-0 hidden md:block text-right w-24">
-                    <span class="text-sm font-bold text-gray-500">ระดับ ม.ปลาย</span>
-                </div>
-                <h3 class="text-lg font-bold text-gray-300">ระดับชั้นมัธยมศึกษาตอนปลาย (ม.6)</h3>
-                <p class="text-sm text-gray-500 font-light">[ คุณฟลุ๊คสามารถเข้าไปคลิกแก้ไข เพิ่มชื่อโรงเรียนและสายการเรียนตรงบรรทัดนี้ได้เลยครับ ]</p>
-            </div>
-
-            <!-- ม.ต้น -->
-            <div class="mb-12 relative pl-8 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-700 border-4 border-[#0A0A0E] group-hover:scale-125 transition"></div>
-                <div class="absolute right-full mr-8 top-0 hidden md:block text-right w-24">
-                    <span class="text-sm font-bold text-gray-500">ระดับ ม.ต้น</span>
-                </div>
-                <h3 class="text-lg font-bold text-gray-300">ระดับชั้นมัธยมศึกษาตอนต้น (ม.3)</h3>
-                <p class="text-sm text-gray-500 font-light">[ คุณฟลุ๊คสามารถเข้าไปคลิกแก้ไข เพิ่มเติมชื่อโรงเรียนตรงบรรทัดนี้ได้เลยครับ ]</p>
-            </div>
-
-            <!-- ประถม -->
-            <div class="mb-4 relative pl-8 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-gray-700 border-4 border-[#0A0A0E] group-hover:scale-125 transition"></div>
-                <div class="absolute right-full mr-8 top-0 hidden md:block text-right w-24">
-                    <span class="text-sm font-bold text-gray-500">ระดับประถม</span>
-                </div>
-                <h3 class="text-lg font-bold text-gray-300">ระดับประถมศึกษา</h3>
-                <p class="text-sm text-gray-500 font-light">[ คุณฟลุ๊คสามารถเข้าไปคลิกแก้ไข เพิ่มเติมชื่อโรงเรียนประถมต้นประถมปลายตรงบรรทัดนี้ได้เลยครับ ]</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. REWARDS & CERTIFICATES (รางวัลและเกียรติบัตร) -->
-    <section class="max-w-7xl mx-auto px-6 py-24 border-t border-gray-900 bg-gray-900/5">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-extrabold mb-3">รางวัล & เกียรติบัตรความสำเร็จ (Certificates)</h2>
-            <p class="text-[#8A92A6] text-sm">การันตีองค์ความรู้และความสามารถผ่านคลังเกียรตบัตรสะสมกว่า 10 ใบ</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-6">
-            <!-- กล่องเกียรติบัตรใบที่ 1 -->
-            <div class="bg-[#111116] border border-gray-800 p-6 rounded-2xl flex gap-4 items-center group hover:border-[#6C5CE7]/30 transition">
-                <div class="w-12 h-12 rounded-xl bg-[#6C5CE7]/10 text-[#6C5CE7] flex items-center justify-center text-xl shrink-0">
-                    <i class="fa-solid fa-award"></i>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white">เกียรติบัตรคลังความรู้สะสมใบที่ 1</h4>
-                    <p class="text-xs text-gray-500 mt-0.5">ออกโดย: สถาบัน / หน่วยงานต้นสังกัด | สามารถกรอกเพิ่มรายละเอียดได้</p>
-                </div>
-            </div>
-            <!-- กล่องแนะนำวิธีเพิ่มรางวัล -->
-            <div class="bg-[#111116] border border-gray-800 p-6 rounded-2xl flex gap-4 items-center opacity-50 border-dashed">
-                <div class="w-12 h-12 rounded-xl bg-gray-800 text-gray-500 flex items-center justify-center text-xl shrink-0">
-                    <i class="fa-solid fa-square-plus"></i>
-                </div>
-                <div>
-                    <h4 class="font-bold text-gray-400">คลังเกียรติบัตรสะสมอีก 9+ ใบ</h4>
-                    <p class="text-xs text-gray-600 mt-0.5">ก๊อปปี้กล่องด้านบนเพื่ออัปเดตรายชื่อรางวัลเกียรติยศที่ได้รับภายหลัง</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 9. CONTACT FORM -->
-    <section id="contact" class="max-w-4xl mx-auto px-6 py-24 border-t border-gray-900">
-        <div class="bg-[#111116] border border-gray-800 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-            <div class="relative z-10">
-                <h2 class="text-3xl font-black mb-3 text-center md:text-left">📧 Contact Me | ส่งข้อความหาฟลุ๊ค</h2>
-                <p class="text-[#8A92A6] mb-8 text-sm text-center md:text-left">ยินดีต้อนรับทุกโอกาสงานนวัตกรรม การระดมไอเดีย หรือพูดคุยแลกเปลี่ยนด้านโลจิสติกส์ซัพพลายเชนครับ</p>
-                
-                <form class="space-y-4">
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <input type="text" placeholder="ชื่อของคุณ" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#6C5CE7] transition">
-                        <input type="email" placeholder="อีเมลติดต่อกลับ" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#6C5CE7] transition">
-                    </div>
-                    <textarea rows="4" placeholder="พิมพ์ข้อความของคุณตรงนี้..." class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#6C5CE7] transition"></textarea>
-                    <button type="button" class="w-full bg-gradient-to-r from-[#6C5CE7] to-[#00CEC9] text-white py-4 rounded-xl font-bold text-sm transition shadow-md shadow-[#6C5CE7]/10">
-                        ส่งคำขอติดต่อตรง <i class="fa-regular fa-paper-plane ml-1"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER & SOCIAL LINKS -->
-    <footer class="bg-[#060608] border-t border-gray-900 py-12 text-center text-xs text-[#8A92A6]">
-        <div class="flex justify-center space-x-6 mb-6 text-xl">
-            <!-- เชื่อมโยงลิงก์เฟสบุ๊คและไอจีจริงเรียบร้อย -->
-            <a href="https://www.facebook.com/share/18f8NSccHy/" target="_blank" class="hover:text-[#6C5CE7] transition"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/f.fluklerr?igsh=MWNrdzN5MGNpOGpxYQ==" target="_blank" class="hover:text-[#00CEC9] transition"><i class="fa-brands fa-instagram"></i></a>
-            <a href="mailto:nahparitas2546@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-        <p class="mb-1">📧 Contact Email: <span class="text-gray-400 font-mono">nahparitas2546@gmail.com</span></p>
-        <p class="text-gray-600">© 2026 VAREE (Satiraphan Champati). All Rights Reserved. Powered by TailwindCSS.</p>
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2026 Research Portfolio Website. All Rights Reserved. Inspired by LDSC Layout Style.</p>
     </footer>
 
-    <!-- TABS LOGIC JAVASCRIPT -->
-    <script>
-        function filterSelection(category) {
-            const items = document.getElementsByClassName('portfolio-item');
-            const buttons = document.getElementsByClassName('tab-btn');
-            
-            for (let btn of buttons) {
-                btn.classList.remove('bg-[#6C5CE7]', 'text-white');
-                btn.classList.add('text-[#8A92A6]');
-            }
-            document.getElementById('tab-' + category).classList.add('bg-[#6C5CE7]', 'text-white');
-            document.getElementById('tab-' + category).classList.remove('text-[#8A92A6]');
-
-            for (let item of items) {
-                if (category === 'all') {
-                    item.style.display = 'block';
-                } else {
-                    if (item.classList.contains(category)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                }
-            }
-        }
-    </script>
 </body>
 </html>
