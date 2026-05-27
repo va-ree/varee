@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio & Research - COCO ME Cafe</title>
+    <title>สถิรพันธุ์ ชำปฏิ (ฟลุ๊ค Varee) | Portfolio & Research</title>
     <!-- นำเข้าฟอนต์ Anuphan จาก Google Fonts แบบเว็บต้นฉบับ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +13,8 @@
     
     <style>
         :root {
-            --primary-color: #E25822; /* สีส้มหลัก */
-            --secondary-color: #0F2C59; /* สีน้ำเงินเข้มแบบสถาบัน */
+            --primary-color: #E25822; /* สีส้มหลัก LDSC */
+            --secondary-color: #0F2C59; /* สีน้ำเงินเข้ม */
             --dark-color: #1A1A1A;
             --light-bg: #F8F9FA;
             --border-color: #E9ECEF;
@@ -34,7 +34,7 @@
             line-height: 1.6;
         }
 
-        /* Top Bar & Header */
+        /* Header & Logo Area */
         header {
             background-color: #ffffff;
             border-bottom: 3px solid var(--primary-color);
@@ -72,13 +72,14 @@
         }
 
         .logo-text h1 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--secondary-color);
             font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .logo-text p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--primary-color);
             font-weight: 500;
         }
@@ -86,7 +87,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 20px;
         }
 
         nav a {
@@ -105,31 +106,35 @@
         .hero-section {
             background: linear-gradient(135deg, #0F2C59 0%, #1d4480 100%);
             color: #ffffff;
-            padding: 80px 20px;
+            padding: 90px 20px;
             text-align: center;
             position: relative;
-            overflow: hidden;
         }
 
         .hero-container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
 
         .hero-section h2 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-section h3 {
+            font-size: 1.5rem;
+            color: #ff9f43;
             margin-bottom: 20px;
-            letter-spacing: -0.5px;
+            font-weight: 500;
         }
 
         .hero-section p {
             font-size: 1.1rem;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             opacity: 0.9;
             font-weight: 300;
+            font-style: italic;
         }
 
         .btn-main {
@@ -149,6 +154,30 @@
         .btn-main:hover {
             background-color: #c84616;
             transform: translateY(-2px);
+        }
+
+        /* Quick Stats */
+        .stats-bar {
+            background-color: var(--light-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px;
+        }
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .stat-item h4 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        .stat-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         /* Main Content Container */
@@ -202,7 +231,6 @@
             width: 100%;
             height: 220px;
             object-fit: cover;
-            background-color: #ddd;
         }
 
         .card-content {
@@ -231,8 +259,6 @@
             color: #555;
             font-size: 0.95rem;
             margin-bottom: 20px;
-            height: 70px;
-            overflow: hidden;
         }
 
         .btn-secondary {
@@ -250,7 +276,7 @@
             gap: 12px;
         }
 
-        /* Info Section (Sidebar + Content style) */
+        /* Timeline & Skills Layout */
         .info-layout {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -273,17 +299,20 @@
             padding: 30px;
             border-radius: 8px;
             border-left: 4px solid var(--secondary-color);
+            margin-bottom: 25px;
         }
 
         .info-box h3 {
             color: var(--secondary-color);
             margin-bottom: 15px;
             font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .info-box ul {
             padding-left: 20px;
-            margin-top: 10px;
         }
 
         .info-box li {
@@ -291,24 +320,69 @@
             font-size: 0.95rem;
         }
 
+        /* Timeline Styles */
+        .timeline {
+            border-l: 2px solid var(--border-color);
+            padding-left: 20px;
+            position: relative;
+            list-style: none;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        .timeline-item h4 {
+            color: var(--secondary-color);
+            font-size: 1.05rem;
+        }
+        .timeline-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
         /* Footer */
         footer {
             background-color: #1A1A1A;
             color: #ffffff;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
             font-size: 0.9rem;
             border-top: 4px solid var(--primary-color);
         }
 
-        footer p {
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: #ffffff;
             opacity: 0.7;
+            transition: opacity 0.3s, color 0.3s;
+        }
+
+        .footer-socials a:hover {
+            opacity: 1;
+            color: var(--primary-color);
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- Header Section (แถบเมนูบน) -->
     <header>
         <div class="header-container">
             <div class="logo-area">
@@ -316,92 +390,151 @@
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
                 <div class="logo-text">
-                    <h1>RESEARCH PORTFOLIO</h1>
-                    <p>Logistics & Digital Supply Chain Style</p>
+                    <h1>สถิรพันธุ์ ชำปฏิ</h1>
+                    <p>ชื่อในวงการ: วารี (Varee)</p>
                 </div>
             </div>
             <nav>
                 <ul>
                     <li><a href="#"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
                     <li><a href="#research"><i class="fa-solid fa-book"></i> งานวิจัย</a></li>
-                    <li><a href="#about"><i class="fa-solid fa-circle-info"></i> เกี่ยวกับ</a></li>
+                    <li><a href="#experience"><i class="fa-solid fa-briefcase"></i> ประวัติทำงาน</a></li>
+                    <li><a href="#about"><i class="fa-solid fa-user"></i> เส้นทางชีวิต</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Banner -->
+    <!-- Hero Banner (แบนเนอร์ด้านบนสุด) -->
     <section class="hero-section">
         <div class="hero-container">
-            <h2>การพัฒนาระบบธุรกิจชุมชนและดิจิทัลซัพพลายเชน</h2>
-            <p>ยินดีต้อนรับสู่หน้ารวบรวมข้อมูลงานวิจัยและพอร์ตโฟลิโอ เว็บไซต์นี้จัดทำขึ้นในรูปแบบสถาบันการศึกษาและเทคโนโลยีดิจิทัลที่ทันสมัย ค้นหาง่าย สบายตา</p>
-            <!-- ปุ่มเปิดไฟล์วิจัยหลักหน้าเว็บ -->
+            <h2>นิสิตคณะโลจิสติกส์และดิจิทัลซัพพลายเชน มหาวิทยาลัยนเรศวร</h2>
+            <h3>"Connecting logistics with digital solutions, navigating the future of supply chain."</h3>
+            <p>ช่วยคิดให้เลย* และช่วยคิดได้นะเอาเยอะๆ</p>
             <a href="research-coco-me-cafe.pdf" target="_blank" class="btn-main">
-                <i class="fa-solid fa-file-pdf"></i> Open Research PDF (เล่มเต็ม)
+                <i class="fa-solid fa-file-pdf"></i> เปิดดูเล่มวิจัยเต็ม (PDF)
             </a>
         </div>
     </section>
 
+    <!-- Stats Bar (ส่วนสรุปประสบการณ์) -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h4>3 ปี</h4>
+                <p>ปีที่สั่งสมประสบการณ์</p>
+            </div>
+            <div class="stat-item">
+                <h4>1 โปรเจกต์</h4>
+                <p>งานวิจัยหลัก</p>
+            </div>
+            <div class="stat-item">
+                <h4>10 ใบ</h4>
+                <p>เกียรติบัตรที่ได้รับ</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Content -->
     <main class="main-container">
         
-        <h2 class="section-title" id="research">ผลงานวิจัยและโครงการวิเคราะห์</h2>
-
+        <!-- ส่วนคลังผลงานวิจัย -->
+        <h2 class="section-title" id="research">คลังผลงานวิจัย</h2>
         <div class="portfolio-grid">
             
-            <!-- การ์ดที่ 1: งานวิจัยร้านกาแฟ COCO ME -->
+            <!-- งานวิจัยหลักร้าน Coco me cafe -->
             <div class="portfolio-card">
-                <!-- ใส่รูปภาพจำลองบรรยากาศร้านกาแฟและข้อมูล -->
                 <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="COCO ME Cafe" class="card-image">
                 <div class="card-content">
-                    <span class="card-tag">Research Project</span>
-                    <h3>กรณีศึกษาร้าน COCO ME Cafe</h3>
-                    <p>การวิเคราะห์โครงสร้างธุรกิจ การจัดการห่วงโซ่อุปทาน และแนวทางการประยุกต์ใช้เทคโนโลยีดิจิทัลเพื่อยกระดับขีดความสามารถการแข่งขันของร้านคาเฟ่ในชุมชน</p>
+                    <span class="card-tag">งานวิจัยเด่น</span>
+                    <h3>การพัฒนาเว็บไซต์ร้าน โคโค่ มี คาเฟ่</h3>
+                    <p>โครงการวิจัยออกแบบและพัฒนาแพลตฟอร์มเว็บไซต์ตรงตัวของร้าน โคโค่ มี คาเฟ่ (Coco Me Cafe) เพื่อสนับสนุนระบบการขายหน้าร้านออนไลน์ เพิ่มขีดความสามารถการเข้าถึงของลูกค้า และใช้เครื่องมือดิจิทัลช่วยจัดการข้อมูลวัตถุดิบและระบบซัพพลายเชนหลังบ้านอย่างมีประสิทธิภาพ</p>
                     <a href="research-coco-me-cafe.pdf" target="_blank" class="btn-secondary">
                         เปิดอ่านเล่มวิจัยเต็ม PDF <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- การ์ดที่ 2: ระบบการจัดการคลังสินค้า (ข้อมูลจำลอง รอคุณมาเปลี่ยนรูปและข้อความ) -->
-            <div class="portfolio-card">
-                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Logistics Management" class="card-image">
+            <!-- กล่องพื้นที่รอสำหรับใส่ผลงานอื่นเพิ่มภายหลัง -->
+            <div class="portfolio-card" style="border-style: dashed; opacity: 0.6; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 400px;">
                 <div class="card-content">
-                    <span class="card-tag">Logistics & Supply Chain</span>
-                    <h3>ระบบการจัดการโลจิสติกส์ร้านค้า</h3>
-                    <p>บทความวิเคราะห์ตำแหน่งที่ตั้งและการกระจายสินค้าเกษตรแปรรูปในพื้นที่ภาคเหนือตอนล่าง เพื่อลดต้นทุนแฝงและเพิ่มประสิทธิภาพการส่งมอบสินค้า</p>
-                    <a href="#" class="btn-secondary">
-                        อ่านรายละเอียดเพิ่มเติม <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    <i class="fa-solid fa-folder-plus" style="font-size: 3rem; color: var(--text-muted); margin-bottom: 15px;"></i>
+                    <h3>พื้นที่รอใส่ผลงานเพิ่มเติม</h3>
+                    <p>คุณฟลุ๊คสามารถเพิ่มโครงการหรือโปรเจกต์ใหม่ ๆ ได้ที่นี่ในอนาคต</p>
                 </div>
             </div>
 
         </div>
 
-        <!-- ส่วนข้อมูลเพิ่มเติมด้านล่าง -->
+        <!-- ส่วนประวัติการทำงาน -->
+        <h2 class="section-title" id="experience">ประวัติทำงาน & การฝึกงาน</h2>
+        <div class="info-box" style="border-left-color: var(--primary-color); margin-bottom: 50px;">
+            <h3><i class="fa-solid fa-building-user"></i> กองยุทธศาสตร์และงบประมาณ | เทศบาลนครนครสวรรค์</h3>
+            <p style="font-weight: 500; color: var(--secondary-color); margin-bottom: 5px;">ตำแหน่ง: นิสิตฝึกงาน</p>
+            <p>เรียนรู้กระบวนการวางแผนยุทธศาสตร์เชิงพื้นที่ นำทักษะการจัดการข้อมูลและเทคโนโลยีดิจิทัลเข้าไปร่วมขับเคลื่อนโครงการพัฒนา และประสานงานระบบซอฟต์แวร์สำนักงานภาครัฐ</p>
+            <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color);">
+            <p style="font-size: 0.9rem; color: var(--text-muted);"><i class="fa-solid fa-plus-circle"></i> สร้างระบบรอไว้สำหรับเพิ่มประวัติทำงานอื่น ๆ ในอนาคต</p>
+        </div>
+
+        <!-- ส่วนเส้นทางชีวิต และ ทักษะ -->
         <div class="info-layout" id="about">
+            <!-- ซ้าย: เส้นทางชีวิต -->
             <div>
-                <h2 class="section-title">บทสรุปผู้บริหาร / ข้อมูลเบื้องต้น</h2>
-                <p style="margin-bottom: 15px;">เนื้อหาในส่วนนี้ใช้เพื่อจัดแสดงโครงสร้างของเว็บไซต์สไตล์สถาบัน/คณะโลจิสติกส์ (LDSC) คุณสามารถเข้ามาแก้ไขข้อความ คำโปรย หรือนำเนื้อหาจากบทคัดย่อในงานวิจัยของคุณมาวางใส่ตรงนี้ในภายหลังได้ผ่านโปรแกรมแก้ไขโค้ด</p>
-                <p>ระบบการแสดงผลรองรับหน้าจอทุกรูปแบบ (Responsive Design) ทั้งบนคอมพิวเตอร์ แท็บเล็ต และโทรศัพท์มือถืออย่างสมบูรณ์แบบ</p>
+                <h2 class="section-title">เส้นทางชีวิต (Education Timeline)</h2>
+                <ul class="timeline">
+                    <li class="timeline-item">
+                        <h4>ระดับมหาวิทยาลัย</h4>
+                        <p>นิสิตคณะโลจิสติกส์และดิจิทัลซัพพลายเชน มหาวิทยาลัยนเรศวร</p>
+                    </li>
+                    <li class="timeline-item">
+                        <h4>ระดับ ปวส.</h4>
+                        <p>[ แบ่งรอไว้ให้คุณฟลุ๊คมาเขียนรายละเอียดเพิ่มเติมภายหลัง ]</p>
+                    </li>
+                    <li class="timeline-item">
+                        <h4>ระดับ ม.ปลาย</h4>
+                        <p>[ แบ่งรอไว้ให้คุณฟลุ๊คมาเขียนรายละเอียดเพิ่มเติมภายหลัง ]</p>
+                    </li>
+                    <li class="timeline-item">
+                        <h4>ระดับ ม.ต้น</h4>
+                        <p>[ แบ่งรอไว้ให้คุณฟลุ๊คมาเขียนรายละเอียดเพิ่มเติมภายหลัง ]</p>
+                    </li>
+                    <li class="timeline-item">
+                        <h4>ระดับประถมศึกษา</h4>
+                        <p>[ แบ่งรอไว้ให้คุณฟลุ๊คมาเขียนรายละเอียดเพิ่มเติมภายหลัง ]</p>
+                    </li>
+                </ul>
             </div>
             
-            <div class="info-box">
-                <h3><i class="fa-solid fa-tags" style="color: var(--primary-color);"></i> หมวดหมู่งานวิจัย</h3>
-                <ul>
-                    <li>การจัดการห่วงโซ่อุปทาน (Supply Chain)</li>
-                    <li>พาณิชย์อิเล็กทรอนิกส์ชุมชน (E-Commerce)</li>
-                    <li>การวิเคราะห์พฤติกรรมผู้บริโภค</li>
-                    <li>การลดต้นทุนกระบวนการขนส่ง</li>
-                </ul>
+            <!-- ขวา: ทักษะความสามารถ -->
+            <div>
+                <div class="info-box">
+                    <h3><i class="fa-solid fa-laptop-code" style="color: var(--primary-color);"></i> ทักษะความสามารถ</h3>
+                    <ul style="list-style-type: square;">
+                        <li>ใช้งานโปรแกรม Microsoft Office ทั่วไปได้อย่างคล่องแคล่วขั้นสูง</li>
+                        <li>มีความสามารถในตัดต่อวิดีโอและงานมัลติมีเดีย</li>
+                        <li>มีทักษะการเข้าใจคนได้ดี (Empathy)</li>
+                        <li>มีความคิดสร้างสรรค์ พร้อมระดมไอเดียและคิดกลยุทธ์</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3><i class="fa-solid fa-trophy" style="color: gold;"></i> รางวัลที่ได้รับ</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">[ สร้างระบบพื้นที่รอไว้สำหรับกรอกข้อมูลรางวัลภายหลัง ]</p>
+                </div>
             </div>
         </div>
 
     </main>
 
-    <!-- Footer Section -->
+    <!-- Footer Section & Social Links -->
     <footer>
-        <p>© 2026 Research Portfolio Website. All Rights Reserved. Inspired by LDSC Layout Style.</p>
+        <div class="footer-socials">
+            <a href="https://www.facebook.com/share/18f8NSccHy/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/f.fluklerr?igsh=MWNrdzN5MGNpOGpxYQ==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:nahparitas2546@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p style="margin-bottom: 50px;">อีเมลติดต่อ: nahparitas2546@gmail.com</p>
+        <p>© 2026 สถิรพันธุ์ ชำปฏิ (Varee). All Rights Reserved. Inspired by LDSC Style.</p>
     </footer>
 
 </body>
