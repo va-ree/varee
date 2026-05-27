@@ -1,107 +1,317 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <!-- เรียกใช้งาน Tailwind CSS ผ่าน CDN -->
+    <title>Premium Portfolio & Showcase</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome สำหรับ Icons สวยๆ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ลูกเล่นแต่งเติมเอฟเฟกต์เรืองแสง */
+        .glow-purple:hover { box-shadow: 0 0 25px rgba(108, 92, 231, 0.4); }
+        .glow-cyan:hover { box-shadow: 0 0 25px rgba(0, 206, 201, 0.4); }
+    </style>
 </head>
-<body class="bg-[#1E1E24] text-white font-sans antialiased">
+<body class="bg-[#0F0F12] text-gray-100 font-sans antialiased selection:bg-[#6C5CE7] selection:text-white">
 
-    <!-- 1. Header / Navigation -->
-    <header class="sticky top-0 z-50 bg-[#1E1E24]/80 backdrop-blur-md border-b border-gray-800">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-wider bg-gradient-to-r from-[#6C5CE7] to-[#00CEC9] bg-clip-text text-transparent">
-                MY.PORTFOLIO
+    <!-- 1. PREMIUM GLASSMORPHISM NAVBAR -->
+    <header class="sticky top-0 z-50 bg-[#0F0F12]/70 backdrop-blur-xl border-b border-gray-800/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black tracking-wider bg-gradient-to-r from-[#6C5CE7] via-[#8A92A6] to-[#00CEC9] bg-clip-text text-transparent">
+                NEXUS<span class="text-xs font-light text-[#00CEC9] tracking-normal">.LAB</span>
             </a>
-            <nav class="hidden md:flex space-x-8 text-[#8A92A6]">
-                <a href="#about" class="hover:text-white transition">เกี่ยวกับฉัน</a>
-                <a href="#works" class="hover:text-white transition">ผลงาน</a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-[#8A92A6]">
+                <a href="#hero" class="hover:text-white transition-colors">หน้าแรก</a>
+                <a href="#stats" class="hover:text-white transition-colors">ข้อมูลภาพรวม</a>
+                <a href="#bento" class="hover:text-white transition-colors">ทักษะความสามารถ</a>
+                <a href="#works" class="hover:text-white transition-colors">คลังผลงาน</a>
+                <a href="#timeline" class="hover:text-white transition-colors">เส้นทางชีวิต</a>
             </nav>
-            <a href="#contact" class="border border-[#6C5CE7] text-[#6C5CE7] px-4 py-2 rounded-full hover:bg-[#6C5CE7] hover:text-white transition text-sm font-medium">
-                ติดต่อเรา
+            <a href="#contact" class="bg-gradient-to-r from-[#6C5CE7] to-[#00CEC9] text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-[#6C5CE7]/20 hover:scale-105 transition duration-300">
+                ร่วมงานกับเรา <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
             </a>
         </div>
     </header>
 
-    <!-- 2. Hero Section -->
-    <section class="max-w-4xl mx-auto px-6 py-24 text-center md:py-32">
-        <p class="text-[#00CEC9] text-sm font-semibold tracking-widest uppercase mb-3">ยินดีต้อนรับสู่พื้นที่ของผม</p>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-            สวัสดีครับ ผมชื่อ <span class="bg-gradient-to-r from-[#6C5CE7] to-[#00CEC9] bg-clip-text text-transparent">สมชาย</span><br>
-            เป็นนักพัฒนาเว็บไซต์
-        </h1>
-        <p class="text-[#8A92A6] text-lg max-w-xl mx-auto mb-10">
-            ผมหลงใหลในการสร้างสรรค์เว็บไซต์ที่สวยงาม ใช้งานง่าย และตอบโจทย์ผู้ใช้งาน ยินดีที่ได้รู้จักทุกคนครับ
-        </p>
-        <div class="flex justify-center gap-4">
-            <a href="#works" class="bg-[#6C5CE7] hover:bg-[#5b4cc4] text-white px-6 py-3 rounded-lg font-medium transition shadow-lg shadow-[#6C5CE7]/20">
-                ดูผลงานของฉัน
-            </a>
-            <a href="#about" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-medium transition">
-                ทำความรู้จักกันเพิ่ม
-            </a>
+    <!-- 2. HERO SECTION (มหาวิทยาลัยฟีล / ล้ำยุค) -->
+    <section id="hero" class="relative overflow-hidden min-screen-py flex items-center pt-20 pb-24">
+        <!-- แสงนีออนพื้นหลังตกแต่ง (Background Orbs) -->
+        <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#6C5CE7]/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-[#00CEC9]/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-800 bg-gray-900/50 text-xs font-semibold text-[#00CEC9] mb-6 backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-[#00CEC9] animate-pulse"></span> ระบบบันทึกผลงานดิจิทัลเวอร์ชันล่าสุด
+            </span>
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-8 leading-[1.15]">
+                ขับเคลื่อนอนาคตด้วย <br>
+                <span class="bg-gradient-to-r from-[#6C5CE7] via-[#a29bfe] to-[#00CEC9] bg-clip-text text-transparent">นวัตกรรมและเทคโนโลยี</span>
+            </h1>
+            <p class="text-[#8A92A6] text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+                ยินดีต้อนรับสู่ศูนย์รวมประวัติและคลังผลงานวิจัย โครงงานพัฒนาเว็บ และนวัตกรรมสร้างสรรค์ โดยนักพัฒนารุ่นใหม่
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#works" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-[#6C5CE7] hover:text-white transition duration-300 shadow-xl shadow-white/5">
+                    สำรวจผลงานทั้งหมด
+                </a>
+                <a href="#timeline" class="bg-gray-900/80 border border-gray-800 text-white px-8 py-4 rounded-xl font-bold hover:border-[#00CEC9] transition duration-300 backdrop-blur-sm">
+                    <i class="fa-regular fa-file-pdf mr-2"></i> ดาวน์โหลด Resume
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- 3. Portfolio Grid Section -->
-    <section id="works" class="bg-[#16161a] py-20 border-t border-gray-800/50">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
+    <!-- 3. DYNAMIC STATS COUNTER -->
+    <section id="stats" class="max-w-7xl mx-auto px-6 py-12 border-y border-gray-900 bg-gray-900/20 backdrop-blur-sm">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <p class="text-4xl md:text-5xl font-black text-[#6C5CE7] mb-2">15+</p>
+                <p class="text-xs uppercase tracking-widest text-[#8A92A6] font-medium">โปรเจกต์ที่เสร็จสิ้น</p>
+            </div>
+            <div>
+                <p class="text-4xl md:text-5xl font-black text-[#00CEC9] mb-2">99%</p>
+                <p class="text-xs uppercase tracking-widest text-[#8A92A6] font-medium">ความพึงพอใจ</p>
+            </div>
+            <div>
+                <p class="text-4xl md:text-5xl font-black text-white mb-2">3+</p>
+                <p class="text-xs uppercase tracking-widest text-[#8A92A6] font-medium">รางวัลการประกวด</p>
+            </div>
+            <div>
+                <p class="text-4xl md:text-5xl font-black text-[#8A92A6] mb-2">24/7</p>
+                <p class="text-xs uppercase tracking-widest text-[#8A92A6] font-medium">พร้อมเรียนรู้สิ่งใหม่</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. BENTO GRID LAYOUT (หัวข้อทักษะ / ความสามารถแบบแอปเปิ้ล) -->
+    <section id="bento" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-extrabold mb-4">ขีดความสามารถและทักษะ</h2>
+            <p class="text-[#8A92A6]">การผสมผสานศาสตร์แห่งดีไซน์และวิศวกรรมซอฟต์แวร์</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- บล็อกใหญ่ 1 -->
+            <div class="md:col-span-2 bg-[#141419] border border-gray-800/80 rounded-3xl p-8 hover:border-[#6C5CE7]/40 transition duration-300 flex flex-col justify-between group">
                 <div>
-                    <h2 class="text-2xl md:text-3xl font-bold mb-2">ผลงานเด่น</h2>
-                    <p class="text-[#8A92A6]">โปรเจกต์ล่าสุดบางส่วนที่ผมตั้งใจทำ</p>
+                    <div class="w-12 h-12 rounded-2xl bg-[#6C5CE7]/10 flex items-center justify-center text-[#6C5CE7] mb-6 text-xl">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Full-Stack Web Development</h3>
+                    <p class="text-[#8A92A6] text-sm leading-relaxed max-w-md">
+                        เชี่ยวชาญการเขียนโค้ดทั้งส่วนหน้าบ้าน (Frontend) และระบบจัดการข้อมูลหลังบ้าน (Backend) มุ่งเน้นโครงสร้างที่เสถียรและโหลดไว
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-8">
+                    <span class="text-xs bg-gray-900 border border-gray-800 px-3 py-1.5 rounded-full text-gray-400 font-mono">React.js</span>
+                    <span class="text-xs bg-gray-900 border border-gray-800 px-3 py-1.5 rounded-full text-gray-400 font-mono">Next.js</span>
+                    <span class="text-xs bg-gray-900 border border-gray-800 px-3 py-1.5 rounded-full text-gray-400 font-mono">TailwindCSS</span>
+                    <span class="text-xs bg-gray-900 border border-gray-800 px-3 py-1.5 rounded-full text-gray-400 font-mono">Node.js</span>
                 </div>
             </div>
 
-            <!-- Grid การ์ดผลงาน -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- การ์ดชิ้นที่ 1 -->
-                <div class="group bg-[#1E1E24] border border-gray-800 rounded-xl overflow-hidden hover:border-[#6C5CE7]/50 transition duration-300">
-                    <div class="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center text-gray-500">
-                        <!-- ใส่รูปภาพผลงานตรงนี้ -->
-                        <span>[ รูปภาพผลงาน 1 ]</span>
+            <!-- บล็อกย่อย 2 -->
+            <div class="bg-[#141419] border border-gray-800/80 rounded-3xl p-8 hover:border-[#00CEC9]/40 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-[#00CEC9]/10 flex items-center justify-center text-[#00CEC9] mb-6 text-xl">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">UI/UX Creative Design</h3>
+                    <p class="text-[#8A92A6] text-sm leading-relaxed">
+                        ออกแบบประสบการณ์ผู้ใช้ที่เรียบง่าย ตอบโจทย์พฤติกรรมมนุษย์ พร้อมดีไซน์ที่ทันสมัยโดดเด่น
+                    </p>
+                </div>
+                <p class="text-xs text-[#00CEC9] font-semibold mt-6 uppercase tracking-wider">Figma & Adobe Tools</p>
+            </div>
+
+            <!-- บล็อกย่อย 3 -->
+            <div class="bg-[#141419] border border-gray-800/80 rounded-3xl p-8 hover:border-[#8A92A6]/40 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-gray-800 flex items-center justify-center text-gray-300 mb-6 text-xl">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">การวิจัยและวิเคราะห์</h3>
+                    <p class="text-[#8A92A6] text-sm leading-relaxed">
+                        ถนัดการสืบค้นข้อมูลเชิงลึก ทำวิจัยเทคโนโลยีใหม่ ๆ และประยุกต์ใช้เพื่อแก้ปัญหาจริง
+                    </p>
+                </div>
+                <p class="text-xs text-gray-400 font-mono">Data-driven Approach</p>
+            </div>
+
+            <!-- บล็อกใหญ่ 4 -->
+            <div class="md:col-span-2 bg-[#141419] border border-gray-800/80 rounded-3xl p-8 hover:border-[#6C5CE7]/40 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white mb-6 text-xl">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Cloud & DevOps Deployment</h3>
+                    <p class="text-[#8A92A6] text-sm leading-relaxed">
+                        ดูแลการเอาเว็บขึ้นระบบคลาวด์สาธารณะ ควบคุมความปลอดภัย และจัดการระบบ CI/CD เพื่อการอัปเดตระบบที่ไร้รอยต่อ คล้ายระบบขององค์กรใหญ่
+                    </p>
+                </div>
+                <div class="flex gap-4 mt-6 text-xl text-gray-500">
+                    <i class="fa-brands fa-github hover:text-white transition"></i>
+                    <i class="fa-brands fa-aws hover:text-white transition"></i>
+                    <i class="fa-brands fa-docker hover:text-white transition"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PORTFOLIO TABS SECTION (กดสลับฟังก์ชันผลงานด้วย JavaScript) -->
+    <section id="works" class="bg-[#09090B] py-24 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="md:flex md:justify-between md:items-end mb-16">
+                <div>
+                    <h2 class="text-3xl font-extrabold mb-4">คลังผลงานคัดสรร</h2>
+                    <p class="text-[#8A92A6]">เลือกดูโปรเจกต์ตามหมวดหมู่ที่คุณสนใจได้ทันที</p>
+                </div>
+                <!-- ปุ่มกดสลับหมวดหมู่ (Tabs) -->
+                <div class="flex bg-gray-900/60 p-1.5 rounded-xl border border-gray-800 mt-6 md:mt-0">
+                    <button onclick="filterSelection('all')" id="tab-all" class="tab-btn active px-4 py-2 rounded-lg text-xs font-bold transition duration-300 bg-[#6C5CE7] text-white">ทั้งหมด</button>
+                    <button onclick="filterSelection('dev')" id="tab-dev" class="tab-btn px-4 py-2 rounded-lg text-xs font-bold transition duration-300 text-[#8A92A6] hover:text-white">สายโค้ด</button>
+                    <button onclick="filterSelection('design')" id="tab-design" class="tab-btn px-4 py-2 rounded-lg text-xs font-bold transition duration-300 text-[#8A92A6] hover:text-white">สายดีไซน์</button>
+                </div>
+            </div>
+
+            <!-- กล่องแสดงการ์ดผลงาน -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- ชิ้นที่ 1 (สายโค้ด) -->
+                <div class="portfolio-item dev bg-[#141419] border border-gray-800/80 rounded-2xl overflow-hidden group hover:border-[#6C5CE7]/60 transition-all duration-300 glow-purple">
+                    <div class="h-48 bg-gradient-to-br from-indigo-900/40 to-slate-900 flex items-center justify-center border-b border-gray-800 text-gray-600 group-hover:scale-105 transition duration-500">
+                        <i class="fa-solid fa-cubes text-4xl text-[#6C5CE7]/60"></i>
                     </div>
                     <div class="p-6">
-                        <span class="text-xs font-semibold text-[#00CEC9] uppercase tracking-wider">Web Design</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2 group-hover:text-[#6C5CE7] transition">E-Commerce Website</h3>
-                        <p class="text-[#8A92A6] text-sm leading-relaxed mb-4">
-                            ออกแบบและพัฒนาหน้าเว็บร้านค้าออนไลน์ เน้นความคลีน ความเร็ว และการใช้งานที่ลื่นไหลบนมือถือ
-                        </p>
-                        <div class="flex gap-2">
-                            <span class="text-xs bg-gray-800 px-2.5 py-1 rounded text-gray-400">Tailwind</span>
-                            <span class="text-xs bg-gray-800 px-2.5 py-1 rounded text-gray-400">React</span>
-                        </div>
+                        <span class="text-xs font-bold text-[#6C5CE7] tracking-widest uppercase">Development</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">AI Academic Research Hub</h3>
+                        <p class="text-[#8A92A6] text-sm leading-relaxed mb-6">ระบบสืบค้นงานวิจัยทางการศึกษา ขับเคลื่อนด้วยพลังปัญญาประดิษฐ์</p>
+                        <a href="#" class="text-xs font-bold text-white group-hover:text-[#6C5CE7] transition">ดูโปรเจกต์เต็ม <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i></a>
                     </div>
                 </div>
 
-                <!-- การ์ดชิ้นที่ 2 -->
-                <div class="group bg-[#1E1E24] border border-gray-800 rounded-xl overflow-hidden hover:border-[#6C5CE7]/50 transition duration-300">
-                    <div class="aspect-video bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center text-gray-500">
-                        <!-- ใส่รูปภาพผลงานตรงนี้ -->
-                        <span>[ รูปภาพผลงาน 2 ]</span>
+                <!-- ชิ้นที่ 2 (สายดีไซน์) -->
+                <div class="portfolio-item design bg-[#141419] border border-gray-800/80 rounded-2xl overflow-hidden group hover:border-[#00CEC9]/60 transition-all duration-300 glow-cyan">
+                    <div class="h-48 bg-gradient-to-br from-cyan-900/40 to-slate-900 flex items-center justify-center border-b border-gray-800 text-gray-600 group-hover:scale-105 transition duration-500">
+                        <i class="fa-solid fa-compass-drafting text-4xl text-[#00CEC9]/60"></i>
                     </div>
                     <div class="p-6">
-                        <span class="text-xs font-semibold text-[#6C5CE7] uppercase tracking-wider">Application</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2 group-hover:text-[#00CEC9] transition">Task Management Tool</h3>
-                        <p class="text-[#8A92A6] text-sm leading-relaxed mb-4">
-                            เว็บแอปพลิเคชันสำหรับบริหารจัดการงานในทีม มีระบบลากวาง (Drag & Drop) และแสดงสถิติสวยงาม
-                        </p>
-                        <div class="flex gap-2">
-                            <span class="text-xs bg-gray-800 px-2.5 py-1 rounded text-gray-400">JavaScript</span>
-                            <span class="text-xs bg-gray-800 px-2.5 py-1 rounded text-gray-400">Node.js</span>
-                        </div>
+                        <span class="text-xs font-bold text-[#00CEC9] tracking-widest uppercase">UI/UX Design</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">University Mobile Redesign</h3>
+                        <p class="text-[#8A92A6] text-sm leading-relaxed mb-6">ปรับโฉมแอปพลิเคชันมหาวิทยาลัย เน้นความลื่นไหลและเข้าถึงง่าย</p>
+                        <a href="#" class="text-xs font-bold text-white group-hover:text-[#00CEC9] transition">ดูโปรเจกต์เต็ม <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- ชิ้นที่ 3 (สายโค้ด) -->
+                <div class="portfolio-item dev bg-[#141419] border border-gray-800/80 rounded-2xl overflow-hidden group hover:border-[#6C5CE7]/60 transition-all duration-300 glow-purple">
+                    <div class="h-48 bg-gradient-to-br from-purple-900/40 to-slate-900 flex items-center justify-center border-b border-gray-800 text-gray-600 group-hover:scale-105 transition duration-500">
+                        <i class="fa-solid fa-database text-4xl text-[#6C5CE7]/60"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-[#6C5CE7] tracking-widest uppercase">Development</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">Smart Registration Api</h3>
+                        <p class="text-[#8A92A6] text-sm leading-relaxed mb-6">ระบบ API ลงทะเบียนเรียนที่มีความเสถียรสูง รองรับทราฟฟิกมหาศาล</p>
+                        <a href="#" class="text-xs font-bold text-white group-hover:text-[#6C5CE7] transition">ดูโปรเจกต์เต็ม <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-8 text-center text-sm text-[#8A92A6] border-t border-gray-800">
-        <p>© 2026 Designed & Built by Me. Powered by Tailwind CSS</p>
+    <!-- 6. TIMELINE SECTION (ประวัติสไตล์มหาลัยดัง) -->
+    <section id="timeline" class="max-w-4xl mx-auto px-6 py-24">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-extrabold mb-4">เส้นทางและประวัติผลงาน</h2>
+            <p class="text-[#8A92A6]">ประสบการณ์การศึกษาและการทำงานที่ผ่านมา</p>
+        </div>
+
+        <div class="relative border-l border-gray-800 ml-4 md:ml-32">
+            <!-- ไทม์ไลน์ชิ้นที่ 1 -->
+            <div class="mb-12 relative pl-8 group">
+                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#6C5CE7] border-4 border-[#0F0F12] group-hover:scale-150 transition"></div>
+                <div class="absolute right-full mr-8 top-0 hidden md:block text-right w-24">
+                    <span class="text-sm font-bold text-[#6C5CE7]">2024 - ปัจจุบัน</span>
+                </div>
+                <span class="text-xs font-bold text-[#6C5CE7] md:hidden block mb-1">2024 - ปัจจุบัน</span>
+                <h3 class="text-lg font-bold text-white group-hover:text-[#6C5CE7] transition">Full Stack Engineer</h3>
+                <p class="text-xs font-medium text-[#8A92A6] mb-2">บริษัท เทคโนโลยี นวัตกรรม จำกัด</p>
+                <p class="text-sm text-gray-400">พัฒนาและดูแลโครงสร้างหลักของเว็บแอปพลิเคชันให้สามารถใช้งานได้อย่างมีประสิทธิภาพ</p>
+            </div>
+
+            <!-- ไทม์ไลน์ชิ้นที่ 2 -->
+            <div class="mb-12 relative pl-8 group">
+                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#00CEC9] border-4 border-[#0F0F12] group-hover:scale-150 transition"></div>
+                <div class="absolute right-full mr-8 top-0 hidden md:block text-right w-24">
+                    <span class="text-sm font-bold text-[#00CEC9]">2021 - 2024</span>
+                </div>
+                <span class="text-xs font-bold text-[#00CEC9] md:hidden block mb-1">2021 - 2024</span>
+                <h3 class="text-lg font-bold text-white group-hover:text-[#00CEC9] transition">ปริญญาตรี วิทยาการคอมพิวเตอร์</h3>
+                <p class="text-xs font-medium text-[#8A92A6] mb-2">มหาวิทยาลัยเทคโนโลยีชั้นนำ</p>
+                <p class="text-sm text-gray-400">จบการศึกษาด้วยเกียรตินิยม ทำโครงงานวิจัยหลักเกี่ยวกับระบบประมวลผลข้อมูลขนาดใหญ่</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. PREMIUM CONTACT FORM -->
+    <section id="contact" class="max-w-4xl mx-auto px-6 py-24 border-t border-gray-900">
+        <div class="bg-[#141419] border border-gray-800 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-3xl font-black mb-4">มาเริ่มสร้างโปรเจกต์ใหม่ด้วยกัน</h2>
+                <p class="text-[#8A92A6] mb-8 max-w-lg text-sm">ยินดีให้คำปรึกษาด้านการพัฒนาเว็บไซต์และงานดีไซน์ ติดต่อส่งข้อความหาผมได้โดยตรงผ่านฟอร์มนี้</p>
+                
+                <form class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="ชื่อของคุณ" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#6C5CE7] transition">
+                        <input type="email" placeholder="อีเมลติดต่อ" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#6C5CE7] transition">
+                    </div>
+                    <textarea rows="4" placeholder="รายละเอียดโปรเจกต์หรืองานที่ต้องการคุย..." class="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#6C5CE7] transition"></textarea>
+                    <button type="button" class="w-full bg-[#6C5CE7] hover:bg-[#5b4cc4] text-white py-4 rounded-xl font-bold text-sm transition">
+                        ส่งข้อความด่วน <i class="fa-regular fa-paper-plane ml-1"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#09090B] border-t border-gray-900 py-12 text-center text-xs text-[#8A92A6]">
+        <div class="flex justify-center space-x-6 mb-6 text-base">
+            <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p>© 2026 NEXUS.LAB | บันทึกผลงานเชิงวิชาการและวิศวกรรมดิจิทัล</p>
     </footer>
 
+    <!-- INTERACTIVE TABS JAVASCRIPT FUNCTIONS -->
+    <script>
+        function filterSelection(category) {
+            const items = document.getElementsByClassName('portfolio-item');
+            const buttons = document.getElementsByClassName('tab-btn');
+            
+            // 1. จัดการเปลี่ยนปุ่มที่เลือก (Active Tab)
+            for (let btn of buttons) {
+                btn.classList.remove('bg-[#6C5CE7]', 'text-white');
+                btn.classList.add('text-[#8A92A6]');
+            }
+            document.getElementById('tab-' + category).classList.add('bg-[#6C5CE7]', 'text-white');
+            document.getElementById('tab-' + category).classList.remove('text-[#8A92A6]');
+
+            // 2. ฟังก์ชันซ่อนหรือแสดงการ์ดผลงาน
+            for (let item of items) {
+                if (category === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.classList.contains(category)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
